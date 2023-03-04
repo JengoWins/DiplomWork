@@ -19,7 +19,7 @@ namespace DiplomWork
     /// <summary>
     /// Логика взаимодействия для MainPanel.xaml
     /// </summary>
-    /// Оп-ха-ха
+    /// Оп-ха-ха а
 
     public partial class MainPanel : Window
     {
