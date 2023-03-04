@@ -1,0 +1,116 @@
+﻿<Window x:Class="DiplomWork.Dogovor"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DiplomWork"
+        mc:Ignorable="d"
+        Title="Договор" Height="968.143" Width="835.929" Icon="iconBD.png" ResizeMode="CanResizeWithGrip" Background="LightSlateGray" FontFamily="Times New Roman" FontSize="24" WindowStyle="ThreeDBorderWindow">
+    <Grid Margin="0,0,2,4"  x:Name="Flore" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="310*"/>
+            <ColumnDefinition Width="55*"/>
+            <ColumnDefinition Width="461*"/>
+        </Grid.ColumnDefinitions>
+        <ScrollViewer Margin="10,10,10,0" Grid.ColumnSpan="3">
+            <Canvas x:Name="Canva" Height="1512" Background="AliceBlue" Width="679">
+                <Label Content="Наименование организации" Canvas.Left="29" Canvas.Top="104" Width="303"/>
+                <TextBox x:Name="NameCop" Height="34" Canvas.Left="337" TextWrapping="Wrap" Text="TextBox" Canvas.Top="108" Width="323"/>
+                <Label Content="Инн" Canvas.Left="29" Canvas.Top="143" Width="75"/>
+                <TextBox x:Name="INN" Height="34" Canvas.Left="337" TextWrapping="Wrap" Text="TextBox" Canvas.Top="147" Width="323"/>
+                <Label Content="КПП" Canvas.Left="29" Canvas.Top="190" Width="87"/>
+                <TextBox x:Name="KPP" Height="34" Canvas.Left="337" TextWrapping="Wrap" Text="TextBox" Canvas.Top="194" Width="323"/>
+                <Label Content="Город" Canvas.Left="29" Canvas.Top="229" Width="98"/>
+                <TextBox x:Name="City" Height="34" Canvas.Left="337" TextWrapping="Wrap" Text="TextBox" Canvas.Top="233" Width="323"/>
+                <Label Content="Улица" Canvas.Left="29" Canvas.Top="278" Width="104"/>
+                <TextBox x:Name="street" Height="34" Canvas.Left="337" TextWrapping="Wrap" Text="TextBox" Canvas.Top="282" Width="323"/>
+                <Label Content="Комментарий" Canvas.Left="29" Canvas.Top="356" Width="212"/>
+
+                <TextBox x:Name="comment" Height="63" Canvas.Left="337" TextWrapping="Wrap" Text="TextBox" Canvas.Top="360" Width="323"/>
+                <Label Content="ФИО Покупателя" Canvas.Left="29" Canvas.Top="502" Width="303"/>
+                <TextBox x:Name="FIO_Z" Height="34" Canvas.Left="337" TextWrapping="Wrap" Text="TextBox" Canvas.Top="502" Width="323"/>
+
+                <Label Content="Банк" Canvas.Left="29" Canvas.Top="662" Width="303"/>
+                <TextBox x:Name="Bank" Height="34" Canvas.Left="337" TextWrapping="Wrap" Text="TextBox" Canvas.Top="662" Width="323"/>
+                <Label Content="Номер карты" Canvas.Left="29" Canvas.Top="701" Width="303"/>
+                <TextBox x:Name="Number_Card" Height="34" Canvas.Left="337" TextWrapping="Wrap" Text="TextBox" Canvas.Top="701" Width="323"/>
+
+
+                <Label Content="Мебель" Canvas.Left="32" Canvas.Top="777" Width="303"/>
+                <Label Content="Скидка" Canvas.Left="192" Canvas.Top="776" Width="144"/>
+                <TextBox x:Name="Skid" Height="34" Canvas.Left="192" TextWrapping="Wrap" Text="TextBox" Canvas.Top="819" Width="128" />
+                <ComboBox x:Name="ComboBox" Canvas.Left="29" Canvas.Top="820" Width="149" />
+                <Button Content="Добавить" Canvas.Left="192" Canvas.Top="886" Width="128" Click="Button_Click"/>
+
+                <Button Content="Предпросмотр" Width="182" Canvas.Left="487" Canvas.Top="1234" Click="Button_Click_1"/>
+                <Button Content="В главное окно" Width="182" Canvas.Left="16" Canvas.Top="1234" Click="Button_Click_2"/>
+                <ScrollViewer Canvas.Left="12" Canvas.Top="963" Width="657">
+                    <ListView x:Name="List" Height="218" Canvas.Left="16" Canvas.Top="991" Width="696" SelectionChanged="ListView_SelectionChanged">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Артикул" Width="100" DisplayMemberBinding="{Binding articul}" />
+                                <GridViewColumn Header="Товар" Width="100" DisplayMemberBinding="{Binding tovar}" />
+                                <GridViewColumn Header="Цена" Width="100" DisplayMemberBinding="{Binding price}" />
+                                <GridViewColumn Header="Кол-во шт." Width="150" DisplayMemberBinding="{Binding count}" />
+                                <GridViewColumn Header="Скидка" Width="150" DisplayMemberBinding="{Binding skid}" />
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </ScrollViewer>
+                <Label Content="Номер чека" Canvas.Left="29" Canvas.Top="32" Width="303"/>
+                <TextBox x:Name="N" Height="34" Canvas.Left="337" TextWrapping="Wrap" Text="TextBox" Canvas.Top="36" Width="323"/>
+            </Canvas>
+        </ScrollViewer>
+        <Canvas x:Name="Canva1" HorizontalAlignment="Left" Height="854" Margin="23,33,0,0" VerticalAlignment="Top" Width="723" Background="White" Visibility="Hidden" Grid.ColumnSpan="3">
+            <Label Content="Счёт на оплату" Canvas.Left="10" Canvas.Top="15" Width="172"/>
+            <Label x:Name="Postav" Content="Текст" Canvas.Left="148" Canvas.Top="79" Width="554" FontSize="20"/>
+            <Line X1="5" Y1="60" X2="700" Y2="60" Stroke="Black" StrokeThickness="4" Height="70" Width="715"/>
+
+            <Label Content="Поставщик:" Canvas.Left="10" Canvas.Top="75" Width="133"/>
+            <Label x:Name="Img_Text_Main" Content="Текст" Canvas.Left="182" Canvas.Top="15" Width="306" FontSize="24"/>
+            <Label Content="Покупатель" Canvas.Left="10" Canvas.Top="131" Width="172"/>
+            <Label x:Name="Zakaz" Content="Текст" Canvas.Left="143" Canvas.Top="135" Width="559" FontSize="20"/>
+
+            <ListView x:Name="List2" Height="218" Canvas.Left="16" Canvas.Top="200" Width="699" SelectionChanged="ListView_SelectionChanged">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Артикул" Width="100" DisplayMemberBinding="{Binding articul}" />
+                        <GridViewColumn Header="Товар" Width="100" DisplayMemberBinding="{Binding tovar}" />
+                        <GridViewColumn Header="Цена" Width="100" DisplayMemberBinding="{Binding price}" />
+                        <GridViewColumn Header="Кол-во шт." Width="150" DisplayMemberBinding="{Binding count}" />
+                        <GridViewColumn Header="Скидка" Width="150" DisplayMemberBinding="{Binding skid}" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
+
+            <Label Content="Итого:" Canvas.Left="460" Canvas.Top="450" Width="83"/>
+            <Label x:Name="Value" Content="00" Canvas.Left="548" Canvas.Top="450" Width="83"/>
+            <Label Content="С учётом НДС:" Canvas.Left="371" Canvas.Top="493" Width="172"/>
+            <Label x:Name="Valuess" Content="00" Canvas.Left="548" Canvas.Top="536" Width="83"/>
+            <Label Content="Всего к оплате:" Canvas.Left="371" Canvas.Top="536" Width="172"/>
+            <Label Content="руб" Canvas.Left="631" Canvas.Top="488" Width="83"/>
+            <Label Content="руб" Canvas.Left="632" Canvas.Top="536" Width="83"/>
+            <Label Content="руб" Canvas.Left="631" Canvas.Top="450" Width="83"/>
+            <Label Content="00" Canvas.Left="548" Canvas.Top="488" Width="83"/>
+            <Line X1="5" Y1="60" X2="700" Y2="60" Stroke="Black" StrokeThickness="4" Height="70" Width="683" Canvas.Top="536"/>
+
+            <Label Content="Руководитель" Canvas.Left="10" Canvas.Top="706" Width="151"/>
+            <Line X1="5" Y1="60" X2="250" Y2="60" Stroke="Black" StrokeThickness="4" Height="70" Width="193" Canvas.Top="685" Canvas.Left="155" RenderTransformOrigin="0.5,0.5">
+                <Line.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleY="0.275"/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="0.495"/>
+                    </TransformGroup>
+                </Line.RenderTransform>
+            </Line>
+
+            <Line X1="5" Y1="60" X2="250" Y2="60" Stroke="Black" StrokeThickness="4" Height="70" Width="184" Canvas.Top="685" Canvas.Left="518"/>
+            <Label Content="Бухгалтер" Canvas.Left="398" Canvas.Top="706" Width="115"/>
+            <Button x:Name="Edit" Content="Режим редактирования" Width="241" Canvas.Left="16" Canvas.Top="812" Click="Button_Show"/>
+            <Button x:Name="Print" Content="Печать" Width="182" Canvas.Left="520" Canvas.Top="812" Click="Button_Print"/>
+        </Canvas>
+
+    </Grid>
+</Window>

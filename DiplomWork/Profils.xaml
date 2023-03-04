@@ -1,0 +1,53 @@
+﻿<Window x:Class="DiplomWork.Profils"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DiplomWork"
+        mc:Ignorable="d"
+        Title="Авторизация" Height="779.643" Width="1065.929" Icon="iconBD.png" ResizeMode="CanResizeWithGrip"  FontFamily="Times New Roman" FontSize="24" WindowStyle="ThreeDBorderWindow">
+    <Grid Margin="0,0,2,0" Loaded="Grid_Loaded">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="53*"/>
+            <ColumnDefinition Width="123*"/>
+        </Grid.ColumnDefinitions>
+        <Canvas HorizontalAlignment="Left" Height="729" Margin="10,10,0,0" VerticalAlignment="Top" Width="290" Background="LightSlateGray"/>
+        <GridSplitter HorizontalAlignment="Left" Height="739" Margin="305,10,0,0" VerticalAlignment="Top" Width="5"/>
+        <Image HorizontalAlignment="Left" Height="280" Margin="42,51,0,0" VerticalAlignment="Top" Width="224" Source="Profil.jpg" Stretch="Fill"/>
+        <TextBlock x:Name="fio" HorizontalAlignment="Left" Margin="102,367,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="28" Width="100" />
+        <TextBlock x:Name="login" HorizontalAlignment="Left" Margin="102,427,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="28" Width="100"/>
+        <TextBlock x:Name="role" HorizontalAlignment="Left" Margin="102,483,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="28" Width="100"/>
+        <Canvas Grid.Column="1" HorizontalAlignment="Left" Height="729" Margin="10,10,0,0" VerticalAlignment="Top" Width="718"/>
+        <TabControl Grid.Column="1" HorizontalAlignment="Left" Height="729" Margin="10,10,0,0" VerticalAlignment="Top" Width="718">
+            <TabItem x:Name="user" Header="Пользователи">
+                <Grid Background="#FFE5E5E5">
+                    <ListView x:Name="List" HorizontalAlignment="Left" Height="669" Margin="10,10,0,0" VerticalAlignment="Top" Width="692">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="ФИО" Width="100" DisplayMemberBinding="{Binding fio}" />
+                                <GridViewColumn Header="Логин" Width="100" DisplayMemberBinding="{Binding login}" />
+                                <GridViewColumn Header="Роль" Width="100" DisplayMemberBinding="{Binding roles}" />
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="_object" Header="Список задач">
+                <Grid Background="#FFE5E5E5">
+                    <Label Content="Цель:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                    <TextBox HorizontalAlignment="Left" Height="34" Margin="10,53,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="140"/>
+                    <Label Content="Задачи:" HorizontalAlignment="Left" Margin="10,115,0,0" VerticalAlignment="Top"/>
+                    <TextBox HorizontalAlignment="Left" Height="34" Margin="10,158,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="140"/>
+                    <Label Content="Комментарий:" HorizontalAlignment="Left" Margin="10,240,0,0" VerticalAlignment="Top"/>
+                    <TextBox HorizontalAlignment="Left" Height="250" Margin="10,282,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="407"/>
+                    <Label Content="Сотрудник:" HorizontalAlignment="Left" Margin="223,115,0,0" VerticalAlignment="Top"/>
+                    <ComboBox HorizontalAlignment="Left" Margin="230,158,0,0" VerticalAlignment="Top" Width="187"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <Button Content="Главное меню" HorizontalAlignment="Left" Margin="27,681,0,0" VerticalAlignment="Top" Width="175" Height="41" Click="Button_Click"/>
+
+
+
+    </Grid>
+</Window>
